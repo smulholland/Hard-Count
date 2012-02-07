@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8"?>
+<comp:TurboNavigatorContent xmlns:fx="http://ns.adobe.com/mxml/2009" 
+               xmlns:s="library://ns.adobe.com/flex/spark" 
+               xmlns:mx="library://ns.adobe.com/flex/halo"
+			   xmlns:comp="comp.*"
+			   skinClass="skins.TurboNavigatorContentSkin"
+			   firstColumnHeader="Selected Districts">
+	
+	<fx:Declarations>
+		
+	</fx:Declarations>
+	
+	
+	<s:Label top="60" left="0" width="100" text="Filter:" textAlign="right"/>
+	<s:TextInput top="50" left="125" width="175" />
+	<s:Label left="0" top="160" width="100" text="District Code List:" textAlign="right"/>
+	<s:DataGrid left="125" top="150" width="175" alternatingRowColors="{[0xf3fcee, 0xebfce4]}"
+				selectionColor="#ddf9c8">
+		<s:columns>
+			<s:ArrayList>
+				<s:GridColumn></s:GridColumn>
+			</s:ArrayList>
+		</s:columns>
+	</s:DataGrid>
+	
+	<s:Label top="110" left="0" width="100" text="District:" textAlign="right"/>
+	<s:ComboBox id="cmbDistrict" top="100" left="125" width="175"/>
+</comp:TurboNavigatorContent>

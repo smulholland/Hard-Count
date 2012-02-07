@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8"?>
+<comp:TurboNavigatorContent xmlns:fx="http://ns.adobe.com/mxml/2009"
+					xmlns:s="library://ns.adobe.com/flex/spark"
+					xmlns:mx="library://ns.adobe.com/flex/mx"
+					xmlns:comp="comp.*"
+					skinClass="skins.TurboNavigatorContentSkin"
+					firstColumnHeader="Selected Rooftop Areas">
+
+	<fx:Declarations>
+		
+	</fx:Declarations>
+	<mx:ToggleButtonBar left="0" top="5" dataProvider="{roofStack}">
+	</mx:ToggleButtonBar>
+	<mx:ViewStack id="roofStack" left="0" right="0" top="0" bottom="0">
+		<s:NavigatorContent width="100%" height="100%" label="Coordiantes">
+			<s:Label top="60" width="100" text="Latitude:" textAlign="right"/>
+			<s:Label top="110" width="100" text="Logitude:" textAlign="right"/>
+			<s:Label top="160" width="100" text="Radius:" textAlign="right"/>
+			<s:TextInput id="txtLat" top="50" left="125" width="175"/>
+			<s:TextInput id="txtLong" top="100" left="125" width="175"/>
+			<s:NumericStepper id="stpCoordRadius" top="150" left="125" width="85"/>
+			<s:ToggleButton id="tglCoordLock" top="150" left="235" width="50"/>
+		</s:NavigatorContent>
+		<s:NavigatorContent width="100%" height="100%" label="Address">
+			<s:Label top="60" width="100" text="Address:" textAlign="right"/>
+			<s:Label top="110" width="100" text="State:" textAlign="right"/>
+			<s:Label top="160" width="100" text="City:" textAlign="right"/>
+			<s:Label top="210" width="100" text="Radius:" textAlign="right"/>
+			<s:TextInput id="txtAddress" top="50" left="125" width="175" />
+			<s:TextInput id="txtState" top="100" left="125" width="175" />
+			<s:TextInput id="txtCity" top="150" left="125" width="175" />
+			<s:NumericStepper id="stpAddressRadius" top="200" left="125" width="85" />
+			<s:ToggleButton id="tglAddressLock" top="200" left="235" width="50" />
+		</s:NavigatorContent>
+	</mx:ViewStack>
+</comp:TurboNavigatorContent>

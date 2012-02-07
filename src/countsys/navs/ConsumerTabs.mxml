@@ -1,0 +1,148 @@
+<?xml version="1.0" encoding="utf-8"?>
+<mx:TabNavigator xmlns:fx="http://ns.adobe.com/mxml/2009"
+				 xmlns:s="library://ns.adobe.com/flex/spark"
+				 xmlns:mx="library://ns.adobe.com/flex/mx"
+				 xmlns:demographics="countsys.consumer.demographics.*"
+				 xmlns:dwellmort="countsys.consumer.dwellmort.*"
+				 xmlns:specialty="countsys.consumer.specialty.*"
+				 xmlns:quality="countsys.consumer.quality.*"
+				 xmlns:geography="countsys.geography.*"
+				 width="800" height="750" dropShadowVisible="false">
+	<fx:Script>
+		<![CDATA[
+			import mx.controls.Alert;
+			
+			protected function selectEventHandler(event:Event):void
+			{
+				Alert.show("Value Selected");	
+			}
+			
+			protected function removeEventHandler(event:Event):void
+			{
+				Alert.show("Value Removed");
+				
+			}
+			
+			protected function clearEventHandler(event:Event):void
+			{
+				Alert.show("All Selections Cleared");
+				
+			}
+			
+		]]>
+	</fx:Script>
+	<fx:Metadata>
+	</fx:Metadata>
+	<fx:Declarations>
+	</fx:Declarations>
+	<s:NavigatorContent width="100%" height="100%" label="Geography">
+		<mx:Accordion left="0" right="0" top="0" bottom="0">
+			<geography:Zip width="100%" height="100%" label="Zip">
+			</geography:Zip>
+			<geography:SCF width="100%" height="100%" label="SCF">
+			</geography:SCF>
+			<geography:AreaCode width="100%" height="100%" label="Area Code">
+			</geography:AreaCode>
+			<geography:CBSA width="100%" height="100%" label="CBSA (Metro Areas)">
+			</geography:CBSA>
+			<geography:States width="100%" height="100%" label="State">
+			</geography:States>
+			<geography:City width="100%" height="100%" label="City">
+			</geography:City>
+			<geography:County width="100%" height="100%" label="County">
+			</geography:County>
+			<geography:Rooftop width="100%" height="100%" label="Rooftop">
+			</geography:Rooftop>
+			<geography:CongressionalDistrict width="100%" height="100%" label="Congressional District">
+			</geography:CongressionalDistrict>
+			<geography:Nationwide width="100%" height="100%" label="Nationwide">
+			</geography:Nationwide>
+		</mx:Accordion>
+	</s:NavigatorContent>
+	<s:NavigatorContent width="100%" height="100%" label="Demographics">
+		<mx:Accordion left="0" right="0" top="0" bottom="0">
+			<demographics:PresenceOfChildren width="100%" height="100%" label="Presence Of Children">
+			</demographics:PresenceOfChildren>
+			<demographics:ExactAge width="100%" height="100%" label="Exact Age">
+			</demographics:ExactAge>
+			<demographics:EstimatedAge width="100%" height="100%" label="Estimated Age">
+			</demographics:EstimatedAge>
+			<demographics:EstimatedIncome width="100%" height="100%" label="Estimated Income">
+			</demographics:EstimatedIncome>
+			<demographics:MedianIncome width="100%" height="100%" label="Median Income">
+			</demographics:MedianIncome>
+			<demographics:MaritalStatus width="100%" height="100%" label="Marital Status">
+			</demographics:MaritalStatus>
+			<demographics:HouseholdComposition width="100%" height="100%" label="Household Composition">
+			</demographics:HouseholdComposition>
+			<demographics:Title width="100%" height="100%" label="Title">
+			</demographics:Title>
+			<demographics:Gender width="100%" height="100%" label="Gender">
+			</demographics:Gender>
+			<demographics:NumberOfChildren width="100%" height="100%" label="Number of Children">
+			</demographics:NumberOfChildren>
+			<demographics:MonthOfBirth width="100%" height="100%" label="Month of Birth">
+			</demographics:MonthOfBirth>
+			<demographics:OldestAgeAtResidence width="100%" height="100%" label="Oldest Age at Residence">
+			</demographics:OldestAgeAtResidence>
+			<demographics:NetWorthIndicator width="100%" height="100%" label="Net Worth Indicator">
+			</demographics:NetWorthIndicator>
+			<demographics:DateOfBirth width="100%" height="100%" label="Date of Birth">
+			</demographics:DateOfBirth>
+		</mx:Accordion>
+	</s:NavigatorContent>
+	<s:NavigatorContent width="100%" height="100%" label="Dwelling &amp; Mortgage">
+		<mx:Accordion left="0" right="0" top="0" bottom="0">
+			<dwellmort:LengthOfResidence width="100%" height="100%" label="Length of Residence">
+			</dwellmort:LengthOfResidence>
+			<dwellmort:DwellingType width="100%" height="100%" label="Dwelling Type">
+			</dwellmort:DwellingType>
+			<dwellmort:PropertyType width="100%" height="100%" label="Property Type">
+			</dwellmort:PropertyType>
+			<dwellmort:HomeOwnerType width="100%" height="100%" label="Home Owner Type">
+			</dwellmort:HomeOwnerType>
+			<dwellmort:MedianHomeValue width="100%" height="100%" label="Median Home Value">
+			</dwellmort:MedianHomeValue>
+		</mx:Accordion>
+	</s:NavigatorContent>
+	<s:NavigatorContent width="100%" height="100%" label="Specialty">
+		<mx:Accordion left="0" right="0" top="0" bottom="0">
+			<specialty:MedianYearsInSchool width="100%" height="100%" label="Median Years in School">
+			</specialty:MedianYearsInSchool>
+			<specialty:OccupationType width="100%" height="100%" label="Occupation Type">
+			</specialty:OccupationType>
+		</mx:Accordion>
+	</s:NavigatorContent>
+	<s:NavigatorContent width="100%" height="100%" label="Quality Settings">
+		<mx:Accordion left="0" right="0" top="0" bottom="0">
+			<quality:NonDeliverableLeads width="100%" height="100%" label="Non-Deliverable Leads">
+			</quality:NonDeliverableLeads>
+			<quality:POBoxAddress width="100%" height="100%" label="PO Box Address">
+			</quality:POBoxAddress>
+			<quality:Zip4AddressedLeads width="100%" height="100%" label="Zip+4 Addresses">
+			</quality:Zip4AddressedLeads>
+			<quality:PhoneNumber width="100%" height="100%" label="Phone Number">
+			</quality:PhoneNumber>
+			<quality:DoNotMailLeads width="100%" height="100%" label="'Do Not Mail' Leads">
+			</quality:DoNotMailLeads>
+			<quality:PhonesOnFTCDoNotCallList width="100%" height="100%" label="Phones on FTC Do-Not-Call List">
+			</quality:PhonesOnFTCDoNotCallList>
+			<quality:PhonesOnAnyStateDoNotCallList width="100%" height="100%" label="Phones on Any State Do Not Call List">
+			</quality:PhonesOnAnyStateDoNotCallList>
+			<quality:PhonesOnDMAOrAPrivateDNCList width="100%" height="100%" label="Phones on DMA or a Private DNC List">
+			</quality:PhonesOnDMAOrAPrivateDNCList>
+			<quality:CorrectionalFacility width="100%" height="100%" label="Correctional Facility">
+			</quality:CorrectionalFacility>
+			<quality:AssistedLivingOrNursingHome width="100%" height="100%" label="Assisted Living or Nursing Home">
+			</quality:AssistedLivingOrNursingHome>
+			<quality:NamesNotRecentlyValidated width="100%" height="100%" label="Names Not Recently Validated (15 Months)">
+			</quality:NamesNotRecentlyValidated>
+			<quality:MDFUAddresses width="100%" height="100%" label="MDFU Addresses">
+			</quality:MDFUAddresses>
+			<quality:DSFDPVSettings width="100%" height="100%" label="DSF / DPV Settings">
+			</quality:DSFDPVSettings>
+		</mx:Accordion>
+	</s:NavigatorContent>
+	<s:NavigatorContent width="100%" height="100%" label="Review Count">
+	</s:NavigatorContent>
+</mx:TabNavigator>

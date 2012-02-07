@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="utf-8"?>
+<mx:TabNavigator xmlns:fx="http://ns.adobe.com/mxml/2009" 
+				 xmlns:s="library://ns.adobe.com/flex/spark" 
+				 xmlns:mx="library://ns.adobe.com/flex/mx" width="800" height="750"
+				 xmlns:geography="countsys.geography.*">
+	<fx:Script>
+		<![CDATA[
+			
+		]]>
+	</fx:Script>
+	<fx:Metadata>
+	</fx:Metadata>
+	<fx:Declarations>
+	</fx:Declarations>
+	<s:NavigatorContent width="100%" height="100%" label="Geography">
+		<mx:Accordion left="0" right="0" top="0" bottom="0">
+			<geography:Zip width="100%" height="100%" label="Zip">
+			</geography:Zip>
+			<geography:SCF width="100%" height="100%" label="SCF">
+			</geography:SCF>
+			<geography:AreaCode width="100%" height="100%" label="Area Code">
+			</geography:AreaCode>
+			<geography:CBSA width="100%" height="100%" label="CBSA (Metro Areas)">
+			</geography:CBSA>
+			<geography:States width="100%" height="100%" label="State">
+			</geography:States>
+			<geography:City width="100%" height="100%" label="City">
+			</geography:City>
+			<geography:County width="100%" height="100%" label="County">
+			</geography:County>
+			<geography:Rooftop width="100%" height="100%" label="Rooftop">
+			</geography:Rooftop>
+			<geography:CongressionalDistrict width="100%" height="100%" label="Congressional District">
+			</geography:CongressionalDistrict>
+			<geography:Nationwide width="100%" height="100%" label="Nationwide">
+			</geography:Nationwide>
+		</mx:Accordion>
+	</s:NavigatorContent>
+</mx:TabNavigator>

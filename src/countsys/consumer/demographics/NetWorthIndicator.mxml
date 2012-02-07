@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8"?>
+<s:NavigatorContent xmlns:fx="http://ns.adobe.com/mxml/2009" 
+               xmlns:s="library://ns.adobe.com/flex/spark" 
+               xmlns:mx="library://ns.adobe.com/flex/halo">
+	<fx:Script>
+		<![CDATA[
+			import mx.collections.ArrayCollection;
+			
+			public var field_desc:String;
+			public var field_id:String;
+			public var field_val:ArrayCollection;
+			
+			public var tvalue_desc:String;
+			public var tvalue_data:String;
+		
+		]]>
+	</fx:Script>
+	<fx:Metadata>
+		
+	</fx:Metadata>
+	<fx:Declarations>
+		
+	</fx:Declarations>
+	
+	
+</s:NavigatorContent>

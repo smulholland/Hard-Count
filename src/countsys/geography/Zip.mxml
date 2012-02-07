@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8"?>
+<comp:TurboNavigatorContent xmlns:fx="http://ns.adobe.com/mxml/2009"
+					xmlns:s="library://ns.adobe.com/flex/spark"
+					xmlns:mx="library://ns.adobe.com/flex/halo"
+					xmlns:comp="comp.*"
+					skinClass="skins.TurboNavigatorContentSkin"
+					firstColumnHeader="Selected Zip Codes">
+	
+	<fx:Declarations>
+		
+	</fx:Declarations>
+	
+	
+	<!-- Component constraints begin @left="0"  -->
+	<s:Label top="60" left="0" width="100" text="Single Zip Code:" textAlign="right"/>
+	<s:Label top="110" left="0" width="100" text="Zip Range:" textAlign="right"/>
+	<s:Label top="160" left="0" width="100" text="Multiple Zip Codes:" textAlign="right"/>
+	<s:Label top="335" left="0" width="100" text="Radius:" textAlign="right"/>
+	<s:TextInput id="txtSingle" top="50" left="125" width="175" />
+	<s:TextInput id="txtStartRange" top="100" left="125" width="85" />
+	<s:TextInput id="txtEndRange" top="100" left="215" width="85" />
+	<s:TextInput id="txtRadius" top="325" left="125" width="100" />
+	<s:TextArea id="txtMultiple" top="150" left="125" width="175"/>
+	<s:ToggleButton id="tgleRadius" top="325" left="235" width="50"/>
+	
+	
+</comp:TurboNavigatorContent>

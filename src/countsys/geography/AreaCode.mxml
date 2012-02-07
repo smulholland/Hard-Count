@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<comp:TurboNavigatorContent xmlns:fx="http://ns.adobe.com/mxml/2009"
+						xmlns:s="library://ns.adobe.com/flex/spark"
+						xmlns:mx="library://ns.adobe.com/flex/mx"
+						xmlns:comp="comp.*"
+						skinClass="skins.TurboNavigatorContentSkin"
+						firstColumnHeader="Selected Area Codes">
+	
+	
+
+	<s:Label left="0" top="60" width="100" text="Single Area Code:" textAlign="right"/>
+	<s:Label left="0" top="110" width="100" text="Multiple Area Codes:" textAlign="right"/>
+	<s:TextInput id="acInput" left="125" top="50" width="175" />
+	<s:TextArea id="acArea" left="125" top="100" width="175" />
+
+	
+</comp:TurboNavigatorContent>

@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<comp:TurboNavigatorContent xmlns:fx="http://ns.adobe.com/mxml/2009" 
+               xmlns:s="library://ns.adobe.com/flex/spark" 
+               xmlns:mx="library://ns.adobe.com/flex/halo"
+			   xmlns:comp="comp.*"
+			   skinClass="skins.TurboNavigatorContentSkin"
+			   firstColumnHeader="Selected Cities">
+
+	<fx:Declarations>
+		
+	</fx:Declarations>
+	
+
+	<s:Label top="60" left="0" width="100" text="City:" textAlign="right"/>
+	<s:Label top="110" left="0" width="100" text="State:" textAlign="right"/>
+	<s:TextInput id="txtCity" top="50" left="125" width="175" />
+	<s:TextInput id="txtState" top="100" left="125" width="85" />
+		
+	
+</comp:TurboNavigatorContent>

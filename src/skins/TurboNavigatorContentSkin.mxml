@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<!--
+
+    ADOBE SYSTEMS INCORPORATED
+    Copyright 2008 Adobe Systems Incorporated
+    All Rights Reserved.
+
+    NOTICE: Adobe permits you to use, modify, and distribute this file
+    in accordance with the terms of the license agreement accompanying it.
+
+-->
+
+<!--- The default skin class for a Spark SkinnableContainer container.  
+
+     @see spark.components.SkinnableContainer
+        
+      @langversion 3.0
+      @playerversion Flash 10
+      @playerversion AIR 1.5
+      @productversion Flex 4
+-->
+<s:Skin xmlns:fx="http://ns.adobe.com/mxml/2009" xmlns:s="library://ns.adobe.com/flex/spark" 
+    xmlns:fb="http://ns.adobe.com/flashbuilder/2009" alpha.disabled="0.5"
+	xmlns:mx="library://ns.adobe.com/flex/mx">
+	
+	<fx:Metadata>
+		[HostComponent("comp.TurboNavigatorContent")]
+	</fx:Metadata>
+    
+    <s:states>
+        <s:State name="normal" />
+        <s:State name="disabled" />
+    </s:states>
+	
+	<!-- Sets background color by drawing a rectangle. -->
+	<s:Rect id="background" left="0" right="0" top="0" bottom="0">
+		<s:fill>
+			<!--- @private -->
+			<s:SolidColor id="bgFill" color="#f2f2f2"/>
+		</s:fill>
+	</s:Rect>
+    
+	<!-- this is where the children that you add later go-->
+	<s:Group id="contentGroup" left="25" right="0" top="5" bottom="0" minWidth="0" minHeight="0">
+		<s:layout>
+			<s:BasicLayout/>
+		</s:layout>
+	</s:Group>
+	
+	
+	<s:Group id="midWrapper" width="100" horizontalCenter="0" top="5" bottom="5">
+		<!-- Buttons centered @horizontalCenter="0" -->
+		<s:Button id="btnAdd" top="100" label="Add" horizontalCenter="0" skinClass="skins.lg.AddButton"/>
+	</s:Group>
+	<s:Group id="rightWrapper" width="300" right="25" top="5" bottom="5">
+		<!-- Component constraints end @right="0"  -->
+		<s:DataGrid id="dgdSelect" top="50" width="200" right="100" selectionColor="#ddf9c8"
+					alternatingRowColors="{[0xf3fcee, 0xebfce4]}">
+			<s:columns>
+				<s:ArrayList>
+					<s:GridColumn headerText="{hostComponent.firstColumnHeader}" resizable="false"></s:GridColumn>
+				</s:ArrayList>
+			</s:columns>
+		</s:DataGrid>
+		<s:Button id="btnClear" top="75" right="0" label="Clear" skinClass="skins.lg.ClearButton"/>
+		<s:Button id="btnRemove" top="50" right="0" label="Remove" skinClass="skins.lg.RemoveButton"/>
+	</s:Group>	
+</s:Skin>

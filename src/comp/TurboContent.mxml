@@ -1,0 +1,109 @@
+<?xml version="1.0" encoding="utf-8"?>
+<s:NavigatorContent xmlns:fx="http://ns.adobe.com/mxml/2009"
+					xmlns:s="library://ns.adobe.com/flex/spark"
+					xmlns:mx="library://ns.adobe.com/flex/mx"
+					backgroundColor="#f2f2f2">
+	<!--
+	* This is a basic view structure of the count system navigator content for accordion components. It is made up of three groups arranged horizontally. 
+	* Each group is constrained to its side and its child components are constrained to use as much horizontal space as possible, with the exception of 
+	* the center group and its "Add" button child component which is fixed in the absolute middle.
+	* -->
+	
+	<fx:Script>
+		<![CDATA[
+			
+			import mx.collections.ArrayCollection;
+			
+			/**
+			 * The following variables represent the Turbolist properties based on the associated XML files.
+			 **/
+			public var field_desc:String;				//Matches Accordion label.
+			public var field_id:String;					//ID number used by CAS to identify the select category.
+			public var field_val:ArrayCollection;		//Collection of selects. Serves as dataprovider for datagrid.
+			//Field value sets.
+			public var tvalue_desc:String;				//Text element seen in the datagrid.
+			public var tvalue_data:String;				//Character code used by CAS to represent the select.
+			
+			/**
+			 * Other properties
+			 **/
+			public var isGeo:Boolean;					//Geo or Field select indicator for the current navigator component.
+			
+			/**
+			 * Event variables used to dispatch events to the controller.
+			 **/
+			public var selectingEvent:Event;
+			public var removingEvent:Event;
+			public var clearingEvent:Event;
+			
+			/**
+			 * Event dispatcher functions.
+			 **/
+			//Dispatches event when "Add" button is clicked.	
+			public function selectClick(event:Event):void
+			{
+				selectingEvent = new Event("selectEvent",true);
+				dispatchEvent(selectingEvent);
+			}
+			
+			//Dispatches event when "Remove" button is clicked.
+			public function removeClick(event:Event):void
+			{
+				removingEvent = new Event("removeEvent",true);
+				dispatchEvent(removingEvent);
+			}
+			
+			//Dispatches event when "Clear" button is clicked.
+			public function clearClick(event:Event):void
+			{
+				clearingEvent = new Event("clearEvent",true);
+				dispatchEvent(clearingEvent);
+			}
+			
+			//Dispatches event when "Enter / Return" key is pressed while inside of text inputs and areas.
+			protected function keyListener(event:KeyboardEvent):void
+			{
+				if (event.keyCode == 13)
+				{
+					selectingEvent = new Event("selectEvent",true);
+					dispatchEvent(selectingEvent);
+				}
+			}
+			
+		]]>
+	</fx:Script>
+	<fx:Metadata>
+		[Event(name="selectEvent", type="flash.events.Event")]	
+		[Event(name="removeEvent", type="flash.events.Event")]	
+		[Event(name="clearEvent", type="flash.events.Event")]	
+	</fx:Metadata>
+	<fx:Declarations>
+		
+	</fx:Declarations>
+	
+	
+	<s:Group id="midWrapper" top="5" bottom="5" width="100" horizontalCenter="0">
+		<s:Button id="btnAdd" top="100" label="Add" click="selectClick(event)" horizontalCenter="0"/>
+	</s:Group>
+	<s:Group id="rightWrapper" right="25" top="5" bottom="5" width="300">
+		<s:DataGrid id="dgdSelect" right="100" top="50" width="200" alternatingRowColors="{[0xf3fcee, 0xebfce4]}"
+					selectionColor="#ddf9c8">
+			<s:columns>
+				<s:ArrayList>
+					<s:GridColumn headerText="Selected Area Codes" resizable="false"></s:GridColumn>
+				</s:ArrayList>
+			</s:columns>
+		</s:DataGrid>
+		<s:Button id="btnRemove" right="0" top="50" label="Remove" click="removeClick(event)"/>
+		<s:Button id="btnClear" right="0" top="75" label="Clear" click="clearClick(event)"/>
+	</s:Group>
+	<!-- <s:Group id="leftWrapper" width="300" left="25" top="5" bottom="5">
+		// Component constraints begin @left="0" 
+	</s:Group>
+	<s:Group id="midWrapper" width="100" horizontalCenter="0" top="5" bottom="5">
+		// Buttons centered @horizontalCenter="0"
+	</s:Group>
+	<s:Group id="rightWrapper" width="300" right="25" top="5" bottom="5">
+		// Component constraints end @right="0" 
+	</s:Group> -->
+</s:NavigatorContent>

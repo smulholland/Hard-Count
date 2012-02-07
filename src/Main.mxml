@@ -1,0 +1,167 @@
+<?xml version="1.0" encoding="utf-8"?>
+<s:Application xmlns:fx="http://ns.adobe.com/mxml/2009"
+			   xmlns:s="library://ns.adobe.com/flex/spark"
+			   xmlns:mx="library://ns.adobe.com/flex/mx"
+			   xmlns:nav="nav.*"
+			   minWidth="955" minHeight="800" creationComplete="startEngines();" xmlns:navs="countsys.navs.*" xmlns:geography="countsys.geography.*">
+	
+	<fx:Script>
+		<![CDATA[
+			import mx.controls.Alert;
+			import mx.core.FlexGlobals;
+			import mx.events.FlexEvent;
+			import nav.TestCount;
+			import countsys.navs.*;
+			
+			public var currentCountSystem:String;
+			[Bindable] public var cCount:ConsumerTabs = new ConsumerTabs();
+			[Bindable] public var bCount:BusinessTabs = new BusinessTabs();
+			[Bindable] public var mCount:MortgageTabs = new MortgageTabs();
+			[Bindable] public var nCount:NewMoverTabs = new NewMoverTabs();
+			
+			public function startEngines():void
+			{
+				/**
+				 * Create the Consumer Count List and remove it
+				 */
+				cCount.id = "consumerCount";
+				addElement(cCount);
+				currentCountSystem = "consumerCount";
+				trace("Consumer list loaded.");
+				removeElement(cCount);
+				trace("Consumer list removed.");
+				
+				 /**
+				 * Create the Business Count List and remove it
+				 */
+				bCount.id = "businessCount";
+				addElement(bCount);
+				currentCountSystem = "businessCount";
+				trace("Business list loaded.");
+				removeElement(bCount);
+				trace("Business list removed.");
+				
+				 /**
+				 * Create the Mortgage Count List and remove it
+				 */ 
+				mCount.id = "mortgageCount";
+				addElement(mCount);
+				currentCountSystem = "mortgageCount";
+				trace("Mortgage list loaded.");
+				removeElement(mCount);
+				trace("Mortgage list removed.");
+
+				 /**
+				 * Create the New Mover Count List and remove it
+				 */
+				nCount.id = "newmoverCount";
+				addElement(nCount);
+				currentCountSystem = "newmoverCount";
+				trace("New Mover list loaded.");
+				removeElement(nCount);
+				trace("New Mover list removed.");
+			}
+			
+			protected function switchCount(event:MouseEvent):void
+			{
+				switch(systemToSelect.selectedIndex)
+				{
+					case 0:
+					{
+						cCount = new ConsumerTabs();
+						cCount.id = "consumerCount";
+						cCount.visible= true;
+						addElement(cCount);
+						currentCountSystem = "consumerCount";
+						trace(cCount.id);
+						break;
+					}
+					case 1:
+					{
+						bCount = new BusinessTabs();
+						bCount.id = "businessCount";
+						bCount.visible= true;
+						addElement(bCount);
+						currentCountSystem = "businessCount";
+						trace(bCount);
+						break;
+					}
+					case 2:
+					{
+						nCount = new NewMoverTabs();
+						nCount.id = "newmoverCount";
+						nCount.visible= true;
+						addElement(nCount);
+						currentCountSystem = "newmoverCount";
+						trace(mCount.id);
+						break;
+					}
+					case 3:
+					{
+						mCount = new MortgageTabs();
+						mCount.id = "mortgageCount";
+						mCount.visible= true;
+						addElement(mCount);
+						currentCountSystem = "mortgageCount";
+						trace(nCount.id);
+						break;
+					}
+						
+					default:
+					{
+						Alert.show("No count system selected! :(");
+						break;
+					}
+				}			
+			}
+			
+			public function removeCount(event:Event):void
+			{
+				switch(currentCountSystem)
+				{
+					case "consumerCount":
+					{
+						removeElement(cCount);
+						break;
+					}
+					case "businessCount":
+					{
+						removeElement(bCount);
+						break;
+					}
+					case "mortgageCount":
+					{
+						removeElement(mCount);
+						break;
+					}
+					case "newmoverCount":
+					{
+						removeElement(nCount);
+						break;
+					}
+						
+					default:
+					{
+						Alert.show("No count system loaded! :(");
+						break;
+					}
+				}
+			} 
+			
+		]]>
+	</fx:Script>
+	
+	<fx:Declarations>
+		<s:ArrayCollection id="countSystems">
+			<fx:String>Consumer</fx:String>
+			<fx:String>Business</fx:String>
+			<fx:String>Mortgage</fx:String>
+			<fx:String>New Mover</fx:String>
+		</s:ArrayCollection>	
+	</fx:Declarations>
+	<!-- <navs:ConsumerTabs horizontalCenter="0" verticalCenter="0"/> -->
+	<s:Button right="5" top="35" label="Add Nav" click="switchCount(event)" />
+	<s:Button right="5" top="65" label="Del Nav" click="removeCount(event)"/>
+	<s:ComboBox id="systemToSelect" right="5" top="5" dataProvider="{countSystems}"/>
+	
+</s:Application>

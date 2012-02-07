@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<!--
+
+    ADOBE SYSTEMS INCORPORATED
+    Copyright 2008 Adobe Systems Incorporated
+    All Rights Reserved.
+
+    NOTICE: Adobe permits you to use, modify, and distribute this file
+    in accordance with the terms of the license agreement accompanying it.
+
+-->
+
+<!--- The default skin class for a Spark SkinnableContainer container.  
+
+     @see spark.components.SkinnableContainer
+        
+      @langversion 3.0
+      @playerversion Flash 10
+      @playerversion AIR 1.5
+      @productversion Flex 4
+-->
+<s:Skin xmlns:fx="http://ns.adobe.com/mxml/2009" xmlns:s="library://ns.adobe.com/flex/spark" 
+    xmlns:fb="http://ns.adobe.com/flashbuilder/2009" alpha.disabled="0.5" minWidth="835" minHeight="500" y="-19">
+    <fx:Metadata>[HostComponent("spark.components.NavigatorContent")]</fx:Metadata>
+
+    <s:states>
+        <s:State name="normal" />
+        <s:State name="disabled" />
+    </s:states>
+    
+    <!--- Defines the appearance of the SkinnableContainer class's background. -->
+    <s:Rect id="background" left="0" right="0" top="0" bottom="0" topLeftRadiusX="0" topLeftRadiusY="0" topRightRadiusX="0" topRightRadiusY="0"
+			bottomLeftRadiusX="2" bottomLeftRadiusY="2" bottomRightRadiusX="2" bottomRightRadiusY="2">
+        <s:fill>
+            <!--- @private -->
+            <s:BitmapFill source="@Embed(source='assets/myadmin/burstingbgimg.png')"/>
+        </s:fill>
+    </s:Rect>
+	
+	<s:Rect id="topbar" height="20" top="0" left="0" right="0" radiusX="0" radiusY="0">
+		<s:fill>
+			<s:BitmapFill source="@Embed(source='../../images/newblue.png')"/>
+		</s:fill>
+	</s:Rect>
+	
+	<!-- layer 7: border - put on top of the fill so it doesn't disappear when scale is less than 1 -->
+	<!--- @private -->
+	<s:Rect id="border" left="0" right="0" top="0" bottom="0" width="69" height="20" topLeftRadiusX="0" topLeftRadiusY="0" topRightRadiusX="0" topRightRadiusY="0"
+			bottomLeftRadiusX="2" bottomLeftRadiusY="2" bottomRightRadiusX="2" bottomRightRadiusY="2" alpha="0.3">
+		<s:stroke>
+			<s:LinearGradientStroke rotation="90" weight="1">
+				<s:GradientEntry color="0x000000" 
+								 alpha="0.5625" />
+				<s:GradientEntry color="0x000000" 
+								 alpha="0.75" />
+			</s:LinearGradientStroke>
+		</s:stroke>
+	</s:Rect>
+    
+    <!--
+        Note: setting the minimum size to 0 here so that changes to the host component's
+        size will not be thwarted by this skin part's minimum size.   This is a compromise,
+        more about it here: http://bugs.adobe.com/jira/browse/SDK-21143
+    -->
+    <!--- @copy spark.components.SkinnableContainer#contentGroup -->
+    <s:Group id="contentGroup" left="0" right="0" top="20" bottom="0" minWidth="0" minHeight="0">
+        <s:layout>
+            <s:BasicLayout/>
+        </s:layout>
+    </s:Group>
+
+</s:Skin>

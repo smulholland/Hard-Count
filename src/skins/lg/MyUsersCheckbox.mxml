@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?>
+<s:GridItemRenderer xmlns:fx="http://ns.adobe.com/mxml/2009" 
+					xmlns:s="library://ns.adobe.com/flex/spark" 
+					xmlns:mx="library://ns.adobe.com/flex/mx" clipAndEnableScrolling="true">
+	
+	<fx:Script>
+		<![CDATA[
+			import mx.controls.Alert;
+			override public function prepare(hasBeenRecycled:Boolean):void {
+				trace (data[column.dataField])
+				lblData.text = data[column.dataField]
+				//box.selected = (data[column.dataField] == 'Y');
+			}
+			
+			private function clicked():void {
+				if (box.selected) {
+					data[column.dataField] = 'Y';
+				}
+				else {
+					data[column.dataField] = 'N';
+				}
+				Alert.show(data[column.dataField]);
+			}
+		]]>
+	</fx:Script>
+	
+	<s:Label id="lblData" top="9" left="7"/>
+	<s:CheckBox id="box" top="9" left="7" change="clicked()"/>
+	
+</s:GridItemRenderer>

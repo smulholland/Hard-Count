@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
+<CanvasButtonAccordionHeader xmlns:fx="http://ns.adobe.com/mxml/2009" 
+				xmlns:s="library://ns.adobe.com/flex/spark" 
+				xmlns:mx="library://ns.adobe.com/flex/mx" 
+				xmlns="flexlib.containers.accordionClasses.*" skin="skins.lg.AccordionHeaderSkin" textAlign="left">
+	
+	<fx:Script>
+		<![CDATA[
+			private function getText():void
+			{
+				lbl.text = this.data.label;
+				this.label = "";
+			}
+			
+			public function updateImage():void {
+				
+			}
+		]]>
+	</fx:Script>
+	
+	<s:Group height="22" width="100%" creationComplete="getText()">
+		<s:Label id="lbl" top="4.5" left="27" textAlign="left" />
+	</s:Group>
+	
+</CanvasButtonAccordionHeader>
